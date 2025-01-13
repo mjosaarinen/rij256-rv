@@ -157,7 +157,7 @@ one can implement Rijndael-256 with AES round
 instructions by adding an appropriate 256-bit "byte shuffle" into each round.
 The 32-bit S-Boxes and other components of Rijndael-256 are implemented by
 having two 128-bit AES instructions in parallel; the permutation (in one step)
-essentially undies ShiftRows of AES-256 and then does the ShiftRows operation
+essentially undoes ShiftRows of AES-256 and then does the ShiftRows operation
 of Rijndael-256.
 
 However, the details are quite different as the operation of the instructions
