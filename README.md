@@ -33,7 +33,7 @@ as [ref/testvec.txt](ref/testvec.txt). The code isn't modern C and
 not for production use, but it still compiles, and the 128-bit block size
 computations by that code agree with AES (note, however, that matrices are
 organized column-first rather than row-first.). Perhaps the self-test code
-in [rij256_test.c] will be independently helpful to others.
+in [rij256_test.c](rij256_test.c) will be independently helpful to others.
 
 **In short:**
 
@@ -47,7 +47,8 @@ To generate the second half, one needs to increase the loop length
 *   Rijndael-(256,256) has 14 rounds (same as AES-256). The state is
 organized as 8 "columns" of 4 bytes. The ShiftRows() constants are {0,1,3,4}.
 Other component steps -- SubBytes(), MixColumns(), AddRoundKey() --
-are just as in other variants of Rijndael.
+are just as in other variants of Rijndael. There are 32 parallel S-boxes,
+8 MixColumns() calls and the subkeys are 32 bytes as well.
 
 ```
 Rijndael-(256,256) state is loaded with 32 bytes 0, 1, 2, .. 31:
