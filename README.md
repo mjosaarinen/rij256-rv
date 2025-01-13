@@ -141,7 +141,7 @@ from an index provided as an immediate value.
 
 We add XOR into the key schedule process to undo
 the "built-in" round constant and insert a new one from the table
-( see function `rij256_exp_key()` in [rj256_intrin.c]([rj256_intrin.c]) ).
+( see function `rij256_exp_key()` in [rij256_intrin.c]([rij256_intrin.c]) ).
 
 Key schedule is not a time-sensitive operation, and even with this
 additional step, the operation is still very fast. Note that
