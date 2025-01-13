@@ -37,13 +37,6 @@ in [rij256_test.c](rij256_test.c) will be independently helpful to others.
 
 **In short:**
 
-*   The key schedule of Rijndael-(256,256) is the same as AES-256, except
-that one needs to double the amount. The first half of the
-(14+1)*32 = 480-byte Rijndael-(256,256) key schedule for a given key is the
-same as AES-256 subkeys generated for the same 256-bit key.
-To generate the second half, one needs to increase the loop length
-(and make more round constants available.)
-
 *   Rijndael-(256,256) has 14 rounds (same as AES-256). The state is
 organized as 8 "columns" of 4 bytes. The ShiftRows() constants are {0,1,3,4}.
 Other component steps -- SubBytes(), MixColumns(), AddRoundKey() --
@@ -65,6 +58,13 @@ After Rijndael-(256,256) ShiftRows step (left) by {0,1,3,4}:
     ( 14 18 22 26 30  2  6 10 )
     ( 19 23 27 31  3  7 11 15 )
 ```
+
+*   The key schedule of Rijndael-(256,256) is the same as AES-256, except
+that one needs to double the amount. The first half of the
+(14+1)*32 = 480-byte Rijndael-(256,256) key schedule for a given key is the
+same as AES-256 subkeys generated for the same 256-bit key.
+To generate the second half, one needs to increase the loop length
+(and make more round constants available.)
 
 ##  Implementation with with RISC-V "Zvkned" Extension
 
