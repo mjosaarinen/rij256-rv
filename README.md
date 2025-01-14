@@ -155,13 +155,13 @@ As observed on Intel ISA by N. Drucker and S. Gueron in their paper
 ["Software Optimization of Rijndael256 for Modern x86-64 Platforms"](https://doi.org/10.1007/978-3-030-97652-1_18),
 one can implement Rijndael-256 with AES round
 instructions by adding an appropriate 256-bit "byte shuffle" into each round.
-The 32-bit S-Boxes and other components of Rijndael-256 are implemented by
-having two 128-bit AES instructions in parallel; the permutation (in one step)
+The 32 S-Boxes and other components of Rijndael-256 are implemented by
+running two 128-bit AES instructions in parallel. The permutation (in one step)
 essentially undoes ShiftRows of AES-256 and then does the ShiftRows operation
 of Rijndael-256.
 
-However, the details are quite different as the operation of the instructions
-is not the same.
+However, the details on are quite different on RISC-V from x86-64 as the
+operation of the instructions is not the same.
 
 On RVV, one can use `vrgather.vv` to perform a byte shuffle with a byte
 index. The magical byte shuffle for encryption is:
