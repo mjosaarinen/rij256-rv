@@ -1,7 +1,7 @@
 //  aes256_intrin.c
 //  2025-01-12  Markku-Juhani O. Saarinen <mjos@iki.fi>
 
-//  === Simple implemenation of AES-256 with RISC-V Vector Crypto Intrinsics
+//  === Simple implementation of AES-256 with RISC-V Vector Crypto Intrinsics
 
 #include "aes256_rv.h"
 

@@ -1,7 +1,7 @@
 //  rij256_rv_asm.S
 //  2025-01-13  Markku-Juhani O. Saarinen <mjos@iki.fi>
 
-//  === Rijndael-256 using RISC-V Zvnked extensions.
+//  === Rijndael-256 using RISC-V Zvkned extensions.
 //  Originally derived from the (clang) intrinsics code, cleaned up a bit.
 
 #ifndef USE_ZVKNED_INTRIN
